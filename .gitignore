@@ -1,0 +1,10 @@
+.Rproj.user
+.Rhistory
+*_cache
+*_files
+_main.rds
+_book
+*.html
+*.pdf
+search_index.json
+libs
