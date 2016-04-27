@@ -201,11 +201,25 @@ ggplot(data = mpg, mapping = aes(x = displ, y = hwy, label = hwy)) +
 
 # Now that you know how to use aesthetics, take a moment to experiment with the mpg data set.
 # 
-# Map a discrete variable to color, size, alpha, and shape. Then map a continuous variable to each. Does ggplot2 behave differently for discrete vs. continuous variables?
+# Map a discrete variable to color, size, alpha, and shape. Then map a continuous variable to each. 
+# Does ggplot2 behave differently for discrete vs. continuous variables?
 # The discrete variables in mpg are: manufacturer, model, trans, drv, fl, class
 # The continuous variables in mpg are: displ, year, cyl, cty, hwy
 # Map the same variable to multiple aesthetics in the same plot. Does it work? How many legends does ggplot2 create?
 # Attempt to set an aesthetic to something other than a variable name, like displ < 5. What happens?
+
+library(ggplot2)
+
+Step1 <- ggplot(data = mpg, title = "Fuel Efficiency vs. Engine Size", xlab = "Engine Displacement (L)") +
+  geom_point(mapping = aes(x= displ, y = hwy, color = class)) +
+  geom_smooth(mapping = aes(x= displ, y = hwy))
+
+Step1 +
+  labs(title = "Fuel Efficiency vs. Engine Size",
+       x = "Engine Displacement (L)",
+       y = "Highway fuel efficiency (mpg)") +
+  labs(color = "Type of Car") +
+  theme(plot.title = element_text(hjust = 0, vjust= 0))
 
 
 
