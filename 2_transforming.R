@@ -78,6 +78,4 @@ flights_time <- flights %>% select(ends_with("time"))
 ## mutate is to add a new column
 
 
-### compute the proportion between arr_time and departure time
-
 
